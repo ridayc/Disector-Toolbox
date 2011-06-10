@@ -1,0 +1,7 @@
+*.mat
+*.tif
+*.txt*
+.DS_Store
+._.DS_Store
+untitled.m
+*.xlsx

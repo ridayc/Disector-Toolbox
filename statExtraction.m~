@@ -1,0 +1,18 @@
+function imlist = statExtraction(Synapse)
+
+%count synapses per individual image per type
+imlist =  struct('grid',{},'type',{},'layer',{},'image',{});
+for i=1:length(Synapse)
+    imlist(i).grid = Synapse(i).grid;
+    [B,I,J] = unique(Synapse(i).image);
+    imlist(i).image = B;
+    imlist(i).layer = Synapse(i).layer(I);
+    type = unique(Synapse(i).type);
+    for j=1:length(type)
+        
+        %here comes a sadly less efficient part
+        for k=1:length(imlist(i).image)
+            imlist(i).type{k,j} = {type(i) sum(J==k)};
+        end
+    end
+end
