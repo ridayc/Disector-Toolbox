@@ -49,8 +49,8 @@ for i=1:length(Sections)
   %make the center pixels of the disectors red
   for j=randx:DisectorIntervalInPixels:size(im,1)
       for k=randy:DisectorIntervalInPixels:size(im,2)
-          colorim(j-ceil(DisectorSize/2):j+floor(DisectorSize/2)-1,...
-              k-ceil(DisectorSize/2):k+floor(DisectorSize/2)-1,1) = 255;
+          colorim(j-ceil(DisectorSizeInPixels/2):j+floor(DisectorSizeInPixels/2)-1,...
+              k-ceil(DisectorSizeInPixels/2):k+floor(DisectorSizeInPixels/2)-1,1) = 255;
           %Comment or uncomment the following lines to determine the
           %transparency of the disector squares
           %colorim(j-ceil(DisectorSize/2):j+floor(DisectorSize/2)-1,...
